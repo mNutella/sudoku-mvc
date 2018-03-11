@@ -1,0 +1,64 @@
+li .glyphicon {
+    margin-right: 10px;
+}
+
+li.link-active a,
+li.link-active a:hover,
+li.link-active a:focus {
+    background-color: #5C6BC0;
+    color: white;
+}
+
+.logo {
+    width: 300px;
+    height: 75px;
+}
+
+.main-nav {
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .main-nav {
+        height: 100%;
+        width: calc(25% - 20px);
+    }
+    .navbar {
+        border-radius: 0px;
+        border-width: 0px;
+        height: 100%;
+        background-color: #2196F3;
+    }
+    .navbar-header {
+        float: none;
+    }
+    .navbar-collapse {
+        border-top: 1px solid white;
+        padding: 0px;
+    }
+    .navbar ul {
+        float: none;
+    }
+    .navbar li {
+        float: none;
+        font-size: 15px;
+        margin: 6px;
+    }
+    .navbar li a {
+        padding: 10px 16px;
+        border-radius: 4px;
+        color: white;
+    }
+    .navbar a {
+        color: white;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

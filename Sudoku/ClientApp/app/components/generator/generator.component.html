@@ -1,0 +1,22 @@
+<div class="table center-block text-center">
+    <h1>Generate new game field</h1>
+
+    <p>Just push button 'Generate' for than create new game field.</p>
+
+    <p *ngIf="idGameBoard != null">ID: <strong>{{ idGameBoard }}</strong></p>
+
+    <table class="table table-bordered app-table">
+        <tbody>
+            <tr class="app-row" *ngFor="let row of filledGameBoard; let i = index;">
+                <td *ngFor="let col of row.Row; let j = index;" class="app-cell">
+                    <input [readonly]="filledGameBoard[i].Row[j].ReadOnly"
+                           [(ngModel)]="filledGameBoard[i].Row[j].Value"
+                           maxlength="1"
+                           type="number" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button type="button" class="btn btn-primary" (click)="onClickGenerate()">GENERATE</button>
+</div>
