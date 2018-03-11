@@ -1,0 +1,31 @@
+<div class="text-center">
+    <h1>SUDOKU</h1>
+    <p>ID: <strong>{{ idGameBoard }}</strong></p>
+</div>
+<div class="table center-block text-center">
+    <table class="table table-bordered app-table">
+        <tbody>
+            <tr class="app-row" *ngFor="let row of emptyGameBoard; let i = index;">
+                <td *ngFor="let col of row.Row; let j = index;" class="app-cell">
+                    <input *ngIf="emptyGameBoard[i].Row[j].ReadOnly == false"
+                           [readonly]="emptyGameBoard[i].Row[j].ReadOnly"
+                           [(ngModel)]="emptyGameBoard[i].Row[j].Value"
+                           [ngClass]="cellClasses[i][j]"
+                           maxlength="1"
+                           (input)="onChangeCell($event)" type="number"
+                           (click)="onClickCell($event)" />
+
+                    <input *ngIf="emptyGameBoard[i].Row[j].ReadOnly == true"
+                           [readonly]="emptyGameBoard[i].Row[j].ReadOnly"
+                           [(ngModel)]="emptyGameBoard[i].Row[j].Value"
+                           [ngClass]="cellClasses[i][j]"
+                           maxlength="1"
+                           type="number" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" (click)="onClickNewGame()">NEW GAME</button>
+    <button type="button" class="btn btn-primary" (click)="onClickCheck()" data-toggle="modal" data-target="#successfulModal">CHECK</button>
+    <button type="button" class="btn btn-primary" (click)="onClickHelp()">HELP</button>
+</div>
